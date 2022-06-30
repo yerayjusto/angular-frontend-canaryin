@@ -1,0 +1,58 @@
+<div>
+  <div class="heading ion-padding">
+    <ion-text>{{ postId ? "Edit" : "Create" }} a post</ion-text>
+    <ion-button (click)="onDismiss()" size="small" color="dark" fill="clear" shape="round">
+      <ion-icon slot="icon-only" size="large" name="close-outline"></ion-icon>
+    </ion-button>
+  </div>
+  <div class="item-divider"></div>
+  <ion-grid class="ion-padding">
+    <ion-row class="ion-justify-content-start">
+      <ion-col size="auto">
+        <ion-avatar>
+          <ion-img [src]="imagePath"></ion-img>
+        </ion-avatar>
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-text>{{ fullName }}</ion-text>
+        </div>
+        <ion-button size="small" color="medium" fill="outline" shape="round">
+          <ion-icon color="dark" name="globe-outline"></ion-icon>
+          <ion-text class="view-status">Anyone</ion-text>
+          <ion-icon color="dark" name="caret-down-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <form class="ion-padding" #form="ngForm" (ngSubmit)="onPost()">
+    <ion-textarea rows="5" placeholder="What do you want to talk about?"
+    type="text"
+    name="body"
+    ngModel
+    required>
+    </ion-textarea>
+    <ion-button fill="clear">Add hashtag</ion-button>
+    <div class="action-items">
+      <div>
+        <ion-button size="small" shape="round" color="dark" fill="clear">
+          <ion-icon lass="ion-padding-none" slot="icon-only" name="add"></ion-icon>
+        </ion-button>
+        <ion-button size="small" shape="round" color="dark" fill="clear">
+          <ion-icon lass="ion-padding-none" slot="icon-only" name="image-outline"></ion-icon>
+        </ion-button>
+        <ion-button size="small" shape="round" color="dark" fill="clear">
+          <ion-icon lass="ion-padding-none" slot="icon-only" name="play-sharp"></ion-icon>
+        </ion-button>
+        <ion-button size="small" shape="round" color="dark" fill="clear">
+          <ion-icon lass="ion-padding-none" slot="icon-only" name="calendar-outline"></ion-icon>
+        </ion-button>
+        <ion-button size="small" shape="round" color="dark" fill="clear">
+          <ion-icon lass="ion-padding-none" name="chatbox-ellipses-outline"></ion-icon>
+          <ion-text class="view-status">Anyone</ion-text>
+        </ion-button>
+      </div>
+      <ion-button class="ion-margin" [disabled]="!form.valid" type="submit">{{ postId ? "Edit" : "Post" }}</ion-button>
+    </div>
+  </form>
+</div>
