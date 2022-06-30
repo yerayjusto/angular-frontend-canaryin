@@ -1,4 +1,4 @@
-# Project derivate of linkedin - Ionic framework
+# Project derivate of LinkedIn - Ionic framework
 
 Angular 13
 
